@@ -1,0 +1,20 @@
+.not-found {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+.not-found__img {
+    width: 250px;
+    margin-top: 50px;
+}
+.not-found__title, 
+.not-found__txt {
+    font-size: var(--font-size-subheader);
+    color: var(--color-white);
+    text-align: center;
+    text-shadow: var(--text-shadow-blue);
+}
+.not-found__txt {
+    margin-top: var(--spacing-large);
+}
