@@ -9,19 +9,19 @@ yarn-error.log*
 /build
 
 # Dependency directories
-node_modules/
-jspm_packages/
+/node_modules
+/jspm_packages
 /.pnp
 .pnp.js
 
 # Distribution directories
-dist/
+/dist
 
 # testing
 /coverage
 
 # Typescript v1 declaration files
-typings/
+/typings
 
 # Optional npm cache directory
 .npm
@@ -40,7 +40,14 @@ typings/
 
 # misc
 .DS_Store
+Thumbs.db
 .env.local
 .env.development.local
 .env.test.local
 .env.production.local
+
+/test
+/storybook-static
+
+
+

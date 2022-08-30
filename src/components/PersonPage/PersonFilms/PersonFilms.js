@@ -1,6 +1,6 @@
 import {useState, useEffect} from 'react';
 import PropTypes from 'prop-types';
-import {changeHTTP, makeConcurrentRequest} from '../../../utils/network';
+import {changeHTTP, makeConcurrentRequest} from '@utils/network';
 import styles from './PersonFilms.module.css';
 
 const PersonFilms = ({films}) => {

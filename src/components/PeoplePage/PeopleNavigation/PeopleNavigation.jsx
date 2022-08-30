@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
-import UiButton from '../../UI/UiButton';
+import UiButton from '@ui/UiButton';
 import styles from './PeopleNavigation.module.css';
 
 const PeopleNavigation = ({

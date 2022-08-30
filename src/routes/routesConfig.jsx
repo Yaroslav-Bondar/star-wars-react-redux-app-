@@ -1,7 +1,7 @@
-import HomePage from '../containers/HomePage';
-import PeoplePage from '../containers/PeoplePage';
-import PersonPage from '../containers/PersonPage';
-import NotFondPage from '../containers/NotFondPage'
+import HomePage from '@containers/HomePage';
+import PeoplePage from '@containers/PeoplePage';
+import PersonPage from '@containers/PersonPage';
+import NotFondPage from '@containers/NotFondPage'
 
 export const routesConfig = [
     {

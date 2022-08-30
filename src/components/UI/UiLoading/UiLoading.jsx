@@ -13,6 +13,7 @@ UiLoading.propTypes = {
     color: PropTypes.string,
     shadow: PropTypes.bool,
 }
+
 UiLoading.defaultProps = {
     color: '#fff',
     shadow: true,

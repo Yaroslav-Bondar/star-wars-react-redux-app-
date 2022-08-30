@@ -1,4 +1,4 @@
-import {HTTP, HTTPS} from '../constants/api';
+import {HTTP, HTTPS} from '@constants/api';
 
 /**
  * changing HTTP on HTTPS in URL

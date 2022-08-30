@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react';
 // checking type of props https://github.com/facebook/prop-types 
 import PropTypes from 'prop-types';
-import { withErrorApi } from '../../hoc-helpers/withErrorApi';
-import PeopleList from '../../components/PeoplePage/PeopleList';
-import PeopleNavigation from '../../components/PeoplePage/PeopleNavigation';
-import { getApiResource, changeHTTP } from '../../utils/network';
-import {useQueryParams} from '../../hooks/useQueryParams';
+import { withErrorApi } from '@hoc-helpers/withErrorApi';
+import PeopleList from '@components/PeoplePage/PeopleList';
+import PeopleNavigation from '@components/PeoplePage/PeopleNavigation';
+import { getApiResource, changeHTTP } from '@utils/network';
+import {useQueryParams} from '@hooks/useQueryParams';
 import { getPeopleId, getPeopleImage, getPeoplePageId } from '../../services/getPeopleData';
-import { API_PEOPLE, SWAPI_PEOPLE } from '../../constants/api';
+import { API_PEOPLE, SWAPI_PEOPLE } from '@constants/api';
 import styles from './PeoplePage.module.css';
 
 const PeoplePage = ({setErrorApi}) => {
