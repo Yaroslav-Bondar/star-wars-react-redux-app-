@@ -1,16 +1,16 @@
 import PropTypes, { resetWarningCache } from 'prop-types';
 import React, { useEffect, useState, Suspense } from 'react';
 import {useParams} from 'react-router-dom';
-import PersonInfo from '../../components/PersonPage/PersonInfo';
-import PersonPhoto from '../../components/PersonPage/PersonPhoto';
-import PersonLinkBack from '../../components/PersonPage/PersonLinkBack';
-import UiLoading from '../../components/UI/UiLoading';
-import { withErrorApi } from '../../hoc-helpers/withErrorApi';
-import { getApiResource } from '../../utils/network';
-import {getPeopleImage} from '../../services/getPeopleData'
-import {API_PERSON} from '../../constants/api';
+import PersonInfo from '@components/PersonPage/PersonInfo';
+import PersonPhoto from '@components/PersonPage/PersonPhoto';
+import PersonLinkBack from '@components/PersonPage/PersonLinkBack';
+import UiLoading from '@components/UI/UiLoading';
+import { withErrorApi } from '@hoc-helpers/withErrorApi';
+import { getApiResource } from '@utils/network';
+import {getPeopleImage} from '@services/getPeopleData'
+import {API_PERSON} from '@constants/api';
 import styles from './PersonPage.module.css';
-const PersonFilms = React.lazy(() => import('../../components/PersonPage/PersonFilms'));
+const PersonFilms = React.lazy(() => import('@components/PersonPage/PersonFilms'));
 
 const PersonPage = ({setErrorApi}) => {
     // console.log(id);

@@ -1,11 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './containers/App';
-import './styles/index.css';
+import App from '@containers/App';
+import '@styles/index.css';
 
 // import reportWebVitals from './reportWebVitals';
-
-// {/* <PeoplePage /> */}
 ReactDOM.render(
   <React.StrictMode>
     <App />

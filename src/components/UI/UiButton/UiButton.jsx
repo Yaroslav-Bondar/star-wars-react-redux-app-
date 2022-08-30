@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import cn from 'classnames';
-import '../index.css'; 
+import '@styles/index.css'; 
 import styles from './UiButton.module.css';
 
 const UiButton = ({
