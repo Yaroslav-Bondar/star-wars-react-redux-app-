@@ -15,14 +15,10 @@ const PeoplePage = ({setErrorApi}) => {
     const [prevPage, setPrevPage] = useState(null);
     const [nextPage, setNextPage] = useState(null);
     const [counterPage, setCounterPage] = useState(1);
-
-    // console.log(useQueryParams().toString());
-    // console.log(useQueryParams().get('page'));
     const queryPage = useQueryParams().get('page')
-    // console.log(queryPage, nextPage, prevPage);
+
     const getResource = async (url) => {
         const data = await getApiResource(url);
-        console.log(data);
         // if the data does not contain an error
         if(true !== data instanceof Error) {
         try {
@@ -38,7 +34,6 @@ const PeoplePage = ({setErrorApi}) => {
             setPeople(peopleList);
             setNextPage(changeHTTP(data.next));
             setPrevPage(changeHTTP(data.previous));
-            // console.log(people);
             setCounterPage(getPeoplePageId(url));
             setErrorApi(false);
             }
@@ -47,18 +42,14 @@ const PeoplePage = ({setErrorApi}) => {
             }
         } // if the data contains an error 
         else {
-            console.log(people);
-            // call to display error (higher-order component withErrorApi)
             setErrorApi(data);  
         }
     };
     useEffect(()=> {
-        console.log('useEffect');
         getResource(API_PEOPLE + queryPage);
-        // getResource('https://swapi.dev/api/people/?page=2');
     },[]);
     return (
-        <>PeoplePage
+        <>
             <PeopleNavigation getResource = {getResource} 
                 nextPage = {nextPage} 
                 prevPage = {prevPage}

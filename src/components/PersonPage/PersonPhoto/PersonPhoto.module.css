@@ -1,4 +1,5 @@
 .container {
+    position: relative;
     width: 250px;
     height: 350px;
 }
@@ -8,4 +9,20 @@
     border-radius: var(--border-radius-medium);
     object-fit: cover;
     object-position: center center;
+}
+.icon {
+    --size: 50px;
+    --half-size: calc(var(--size) / 2);
+    --color: var(--color-white);
+    position: absolute;
+    top: -10px;
+    left: 90%;
+    padding: 0;
+    border-top: 0;
+    background: transparent;
+    filter: drop-shadow(0 0 2px #000);
+    cursor: pointer;
+}
+.icon.icon_active {
+    --color: var(--color-yellow);
 }

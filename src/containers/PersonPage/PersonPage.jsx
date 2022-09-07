@@ -1,5 +1,6 @@
 import PropTypes, { resetWarningCache } from 'prop-types';
 import React, { useEffect, useState, Suspense } from 'react';
+import {useSelector} from 'react-redux';
 import {useParams} from 'react-router-dom';
 import PersonInfo from '@components/PersonPage/PersonInfo';
 import PersonPhoto from '@components/PersonPage/PersonPhoto';
@@ -13,17 +14,17 @@ import styles from './PersonPage.module.css';
 const PersonFilms = React.lazy(() => import('@components/PersonPage/PersonFilms'));
 
 const PersonPage = ({setErrorApi}) => {
-    // console.log(id);
     const [personInfo, setPersonInfo] = useState(null);
     const [personName, setPersonName] = useState(null);
     const [personPhoto, setPersonPhoto] = useState(null);
     const [personFilms, setPersonFilms] = useState(null);
+    const [isFavorite, setIsFavorite] = useState(false);
+    const favorites = useSelector(store => store.favoriteReducer);   
     const {id} = useParams();
 
     useEffect(() => {
         (async() => {
             const res = await getApiResource(API_PERSON + `/${id}`);
-            console.log(res);
             // check received data for Errors
             if(!(res instanceof Error)) {
                 setErrorApi(false);
@@ -39,6 +40,7 @@ const PersonPage = ({setErrorApi}) => {
                 res.films.length && setPersonFilms(res.films);
                 setPersonName(res.name);
                 setPersonPhoto(getPeopleImage(id));
+                if(favorites[id]) setIsFavorite(true); else setIsFavorite(false);
             } else {
                 setErrorApi(res);
             }
@@ -48,12 +50,15 @@ const PersonPage = ({setErrorApi}) => {
         <>
             <PersonLinkBack/>
             <div className = {styles.wrapper}>
-                <span className = {styles.person__name}>{personName}</span>
+            {personName && <span className = {styles.person__name}>{personName}</span>}
                 <div className = {styles.container}>
-                    <PersonPhoto 
+                    {personPhoto &&  <PersonPhoto 
+                        personId = {id}
                         personPhoto = {personPhoto}
                         personName = {personName}
-                        />
+                        isFavorite = {isFavorite}
+                        setIsFavorite = {setIsFavorite}
+                    />}
                     {personInfo && <PersonInfo personInfo = {personInfo}/>}
                     {personFilms && (
                         <Suspense fallback={<UiLoading />}>
